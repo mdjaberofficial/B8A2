@@ -1,4 +1,4 @@
-// src/middleware/globalErrorHandler.ts
+
 // Step 1: Import Express types, AppError, and sendResponse
 import { NextFunction, Request, Response } from "express";
 import AppError from "../utils/AppError";
