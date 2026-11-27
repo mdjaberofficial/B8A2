@@ -1,0 +1,33 @@
+{
+  "name": "b8a2",
+  "version": "1.0.0",
+  "description": "eventhive-api/\r ├── .env.example                    # Environment variables template\r ├── package.json                    # Dependencies & scripts (dev, build, start)\r ├── README.md                       # Project & API documentation\r ├── tsconfig.json                   # Strict TypeScript configuration\r ├── tsup.config.ts                  # ESM/CJS bundle config for dist/server.js\r ├── vercel.json                     # Vercel deployment routing configuration\r ├── logger.txt                      # Request audit log output (optional / local)\r └── src/\r     ├── app.ts                      # App configuration & middleware pipeline\r     ├── server.ts                   # Server bootstrap & database pool connection\r     ├── config/\r     │   └── index.ts                # Environment variables loader\r     ├── db/\r     │   └── index.ts                # PostgreSQL pool & auto schema migration (users, events, bookings)\r     ├── middleware/\r     │   ├── auth.ts                 # JWT authentication & Role-Based Access Control (RBAC)\r     │   ├── globalErrorHandler.ts   # Centralized 4-argument error handler (AppError + PG errors)\r     │   ├── index.d.ts              # TypeScript declaration merging for Express.Request (req.user)\r     │   ├── logger.ts               # Custom request logging middleware\r     │   └── validateRequest.ts      # Optional Zod validation middleware\r     ├── modules/\r     │   ├── auth/                   # Registration & Login with JWT token issuance\r     │   │   ├── auth.controller.ts\r     │   │   ├── auth.interface.ts\r     │   │   ├── auth.route.ts\r     │   │   ├── auth.service.ts\r     │   │   └── auth.validation.ts  # Optional Zod schemas for signup & login\r     │   ├── events/                 # Events CRUD, search, & seat inventory management\r     │   │   ├── event.controller.ts\r     │   │   ├── event.interface.ts\r     │   │   ├── event.route.ts\r     │   │   ├── event.service.ts\r     │   │   └── event.validation.ts # Optional Zod schemas for create & update event\r     │   └── bookings/               # Ticket booking, history & cancellation\r     │       ├── booking.controller.ts\r     │       ├── booking.interface.ts\r     │       ├── booking.route.ts\r     │       ├── booking.service.ts\r     │       └── booking.validation.ts # Optional Zod schema for book tickets\r     ├── types/\r     │   └── index.ts                # Role types (\"attendee\" | \"organizer\") & constants\r     └── utils/\r         ├── AppError.ts             # Custom HTTP error class (statusCode + errors array)\r         └── sendResponse.ts         # Generic type-safe response helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.6.11",
+    "@types/pg": "^8.23.1",
+    "tsup": "^9.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
